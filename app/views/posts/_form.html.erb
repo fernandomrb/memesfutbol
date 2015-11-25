@@ -1,0 +1,6 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+
+	<%= f.text_field :title %><br />
+	<%= f.file_field :image %>
+	<%= f.submit 'Enviar post' %>
+<% end %>

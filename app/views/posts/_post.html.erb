@@ -1,0 +1,30 @@
+<div class="post">
+	<div class="post-title">
+		<h3><%= link_to post.title, post %></h3>
+
+	</div>
+
+	<div class="post-image">
+		<%= image_tag post.image.url(), class: "img-responsive" %>
+	</div>
+
+	<div class="post-footer">
+		<div class="votes text-center">
+			
+			<p class="post-like">
+				<%= link_to like_post_path(post), method: :put, class:"btn btn-success like",remote: true do%>
+					<span class="glyphicon glyphicon-thumbs-up col-xs-2"></span>
+				<% end %>
+				<span class="likes-count" data-id="<%= post.id %>"><%= post.get_upvotes.size %></span> 
+			</p> 
+			<p class="post-dislike">
+				<%= link_to dislike_post_path(post), method: :put, class:"btn btn-danger dislike", remote: true  do%>
+					<span class="glyphicon glyphicon-thumbs-down col-xs-2"></span>
+				<% end %>
+				<span class="dislikes-count" data-id="<%= post.id %>"><%= post.get_downvotes.size %></span> 
+			</p> 
+		</div>
+		
+		<p>Enviado por:<br /> <%= post.user.email %></p>
+	</div>
+</div>

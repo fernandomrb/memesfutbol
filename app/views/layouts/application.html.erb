@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memesfutbol</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	
+
+
+	<header>
+		<div class="container">
+				<a href="/posts" id="logo"><h1>MemesFútbol</h1></a>
+				<input type="checkbox" id="input-menu">
+				<label class="icon-menu" for="input-menu"><span class="glyphicon glyphicon-menu-hamburger"></span></label>
+
+				<nav class="menu">
+					<% if user_signed_in? %>
+						<%= link_to 'Enviar post', new_post_path %>
+						<%= link_to 'Moderar', new_post_path %>
+						<%= link_to 'Editar Cuenta', edit_user_registration_path %>
+						<%= link_to 'Cerrar sesión', destroy_user_session_path, :method => :delete %>	
+					<% else %>
+						<%= link_to 'Iniciar sesión', new_user_session_path %>	
+						<%= link_to 'Registrarse', new_user_registration_path %> 
+					<% end %>
+				</nav>
+					
+		</div>
+		
+		
+		
+	</header>
+
+	
+<div class="container container-body">
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+	<%= yield %>
+</div>
+
+
+
+</body>
+</html>

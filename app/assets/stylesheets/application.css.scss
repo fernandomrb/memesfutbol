@@ -1,0 +1,138 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+
+}
+.contenedor {
+	width: 98%;
+	margin: auto
+}
+.container-body {
+	margin-top: 90px;
+}
+header {
+	background: #333333;
+	width: 100%;
+	display: table;
+	height: 80px;
+	margin: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	
+
+	#logo {
+		float: left;
+		color: #d7d7d7;
+		margin: 1em 0;	
+		h1 {
+			font-size: 18px;
+		}
+	
+    }
+	#input-menu {
+		display: none;
+	}
+	input[type="checkbox"]:checked ~ .menu {
+		transform: translateX(0%);
+	}
+
+    .icon-menu {
+    	cursor: pointer;
+    	margin: 1em 0;
+    	float: right;
+    	color: white;
+    	font-size: 24px;
+    }
+}
+
+.menu {
+	position: absolute;
+	background: rgba(0,0,0,0.8);
+	list-style-type: none;
+	top: 80px;
+	left: 0;
+	padding: 0;
+	width: 100%;
+	transition: all 0.5s;
+	transform: translateX(-100%);
+	
+	a {
+		color: white;
+		display: block;
+		border-bottom: 1px solid #f7f7f7;
+		padding: 1em;
+
+		&:hover {
+			background: rgba(0,0,0,0.5);
+
+		}
+	}
+
+}
+
+.post {
+	border: 1px solid #ddd;
+	margin-bottom: 2em;
+	padding: 1em;
+	overflow: hidden;
+
+	.post-image {
+		margin-bottom: 1em;
+		img {
+			margin: 0 auto;
+		}
+
+	}
+
+	.post-title {
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		margin-bottom: 1em;
+		h3 {
+			margin: 0.2em;
+		}
+
+	}
+
+	.post-footer {
+		border-top: 1px solid rgba(0,0,0,0.1);
+		.votes {
+			
+			width: 80%;
+			margin: 0 auto;
+			.post-like {
+				display: inline-block;
+				margin: 1em;
+			}
+			.post-dislike {
+				display: inline-block;
+				margin: 1em;
+			}
+		}
+	}
+}
+
+
+
